@@ -1,0 +1,44 @@
+spring:
+  profiles:
+    active: test
+
+  devtools:
+    restart:
+      enabled: true
+    livereload:
+        enabled: true
+
+  jpa:
+      show-sql: true
+      hibernate:
+        ddl-auto: update
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://abc-sz-hive-meta-test.cyyjxewdzsqv.us-west-2.rds.amazonaws.com:3306/srch_abt_splitter?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: szabc
+    password: 6fDvmnULBXAd
+
+server:
+  port: 8080
+
+abt:
+  token: D52656D0CFA04203A5EC6AF4AF624E89
+  es:
+    nodes:
+  tsp:
+    ip: tsp-dap-gateway-zhuangjianming.dev.abc-test.sheincorp.cn
+    port: 80
+    token: D52656D0CFA04203A5EC6AF4AF624E89
+    urls:
+      list: /tsp-server/api/v1/throng/queryCrowdList
+      detail: /tsp-server/api/v1/throng/queryCrowdDetail
+      create: /tsp-server/api/v1/throng/addStrategyCrowd
+      coverage:  /tsp-server/api/v1/throng/queryCoveringNumberToCrm
+      query: /tsp-server/api/v1/throng/queryCrowd
+      count: /tsp-server/api/v1/throng/queryCrowdCount
+      statistics: /tsp-server/api/v1/statistics
+      reference: /tsp-server/api/v1/throng/updateCrowdMarketStatus
+  split: 0 * * * * ?
+  log:
+    file-name-pattern-info: /ltest.log
+    file-name-pattern-error: /test1.log
